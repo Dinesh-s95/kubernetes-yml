@@ -1,0 +1,208 @@
+    1  apt update && apt install azcli -y
+    2  curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+    3  az login
+    4  az account set --subscription 6e713008-0a88-4ef9-877e-b5fb686ee81f
+    5  az aks get-credentials --resource-group kubernetes --name new-k8s-cluster
+    6  kubectl
+    7  curl -LO https://dl.k8s.io/release/v1.24.0/bin/linux/amd64/kubectl
+    8  ll
+    9  ls -l
+   10  chmod +x kubectl 
+   11  ls -l
+   12  kubectl
+   13  mv kubectl /usr/bin/
+   14  kubectl 
+   15  kubectl get nodes
+   16  vi .bashrc 
+   17  source .bashrc 
+   18  kubectl get nodes
+   19  kubectl get pods
+   20  kubectl run mypod --port 80 --image nginx:latest 
+   21  kubectl get po
+   22  kubectl logs mypod 
+   23  kubectl get pods
+   24  kubectl exec -it mypod -- bash
+   25  kubectl get pods
+   26  kubectl describe pod mypod 
+   27  kubectl get nodes
+   28  kubectl get pod
+   29  kubectl edit pod mypod 
+   30  vi pod.yaml
+   31  kubectl get pods
+   32  kubectl delete pod mypod 
+   33  kubectl get pods
+   34  ls
+   35  kubectl create -f pod.yaml
+   36  vi pod.yaml
+   37  kubectl create -f pod.yaml
+   38  vi pod.yaml
+   39  kubectl create -f pod.yaml
+   40  kubectl get pods
+   41  vi pod.yaml 
+   42  kubectl get pods
+   43  kubectl delete -f pod.yaml 
+   44  kubectl get pods
+   45  ls
+   46  kubectl get pods
+   47  vi pod.yaml 
+   48  vi svc.yaml
+   49  vi pod.yaml 
+   50  vi svc.yaml
+   51  vi pod.yaml 
+   52  vi svc.yaml
+   53  vi svc.yaml 
+   54  vi pod.yaml 
+   55  kubectl create -f pod.yaml 
+   56  kubectl get pods
+   57  kubectl get pods -o wide
+   58  kubectl get svc
+   59  vi pod.yaml 
+   60  kubectl get pods
+   61  kubectl get pods -o wide
+   62  kubectl get svc
+   63  kubectl delete -f pod.yaml 
+   64  cp pod.yaml multi-con.yaml
+   65  vi multi-con.yaml 
+   66  kubectl create -f multi-con.yaml 
+   67  kubectl get pods
+   68  kubectl describe pod multi-con 
+   69  kubectl get pods
+   70  vi multi-con.yaml 
+   71  kubectl get pod
+   72  kubectl logs multi-con 
+   73  kubectl logs multi-con -c con2
+   74  kubectl logs multi-con -c con1
+   75  kubectl get pods
+   76  kubectl exec -it multi-con -c con1 -- bash
+   77  kubectl exec -it multi-con -c con2 -- bash
+   78  cp pod.yaml mysql.yaml
+   79  vi mysql.yaml 
+   80  co pod.yaml wordpress.yaml
+   81  cp pod.yaml wordpress.yaml
+   82  vi wordpress.yaml 
+   83  kubectl create -f wordpress.yaml -f mysql.yaml 
+   84  kubectl get pods
+   85  kubectl describe pod mydb 
+   86  kubectl get pods
+   87  kubectl get svc
+   88  vi wordpress.yaml 
+   89  vi mysql.yaml 
+   90  vi wordpress.yaml 
+   91  vi mysql.yaml 
+   92  ssh-keygen 
+   93  vi .ssh/id_rsa.pub 
+   94  cat .ssh/id_rsa.pub 
+   95  mkdir app
+   96  cp *.yaml app/
+   97  ls
+   98  cd app/
+   99  ls
+  100  vi gitt.sh
+  101  git init
+  102  git add .
+  103  git commit -m "first commit"
+  104  git branch -M main
+  105  git commit -m "first commit"
+  106  git branch -M main
+  107  git remote add origin https://github.com/eraneeshansari/valtech.git
+  108  git push -u origin main
+  109  git remove origin
+  110  git remote remove  origin
+  111  git remote add origin git@github.com:eraneeshansari/valtech.git
+  112  git push -u origin main
+  113  ls
+  114  kubectl get pods
+  115  kubectl run mypod --labels app: myapp --image nginx:latest --port 80 --dry-run=client -o yaml
+  116  kubectl run mypod --labels app=myapp --image nginx:latest --port 80 --dry-run=client -o yaml
+  117  kubectl run mypod --labels app=myapp --image nginx:latest --port 80 --expose --dry-run=client -o yaml
+  118  vi mysql.yaml 
+  119  kubectl run mypod --labels app=myapp --image nginx:latest --port 80 --dry-run=client -o yaml > app.yaml
+  120  vi app.yaml 
+  121  kubectl run mypod --labels app=myapp --image nginx:latest --port 80 --expose --dry-run=client -o yaml > app.yaml
+  122  vi app.yaml 
+  123  kubectl get pods
+  124  kubectl get nodes
+  125  kubectl get pods
+  126  ls
+  127  kubectl delete -f .
+  128  kubectl get pods
+  129  vi rc.yaml
+  130  vi pod.yaml 
+  131  kubectl create -f pod.yaml 
+  132  kubectl get pods
+  133  vi rc.yaml 
+  134  kubectl create -f rc.yaml 
+  135  vi rc.yaml 
+  136  kubectl create -f rc.yaml 
+  137  kubectl get replicationcontrollers 
+  138  kubectl get rc
+  139  kubectl get pods
+  140  kubectl get pods --show-labels 
+  141  kubectl delete -f rc.yaml 
+  142  kubectl get pods
+  143  cp rc.yaml replicaset.yaml
+  144  vi replicaset.yaml 
+  145  vi pop
+  146  vi pod.yaml 
+  147  kubectl create -f pod.yaml 
+  148  kubectl get pods --show-labels 
+  149  vi replicaset.yaml 
+  150  kubectl create -f replicaset.yaml 
+  151  vi replicaset.yaml 
+  152  kubectl create -f replicaset.yaml 
+  153  kubectl get replicasets.apps 
+  154  kubectl get rs
+  155  kubectl get pods
+  156  kubectl get pods -o wide
+  157  vi replicaset.yaml 
+  158  kubectl apply -f replicaset.yaml 
+  159  kubectl get pods -o wide
+  160  kubectl scale replicaset myrs --replicas 2
+  161  kubectl get pods -o wide
+  162  kubectl scale replicaset myrs --replicas 4
+  163  kubectl get pods -o wide
+  164  kubectl get pods --show-labels 
+  165  kubectl delete -f replicaset.yaml 
+  166  kubectl get pods --show-labels 
+  167  kubectl get rs
+  168  chmod +x gitt.sh 
+  169  ./gitt.sh "rc rs"
+  170  cp rc.yaml deployment.yaml
+  171  vi deployment.yaml 
+  172  kubectl create -f deployment.yaml 
+  173  kubectl get deployments.apps 
+  174  kubectl get pods
+  175  kubectl get replicasets.apps 
+  176  kubectl exec -it mydep-6d9d4764d-24nrj -- bash
+  177  kubectl get pods
+  178  kubectl scale deployment mydep --replicas 5
+  179  kubectl get pods
+  180  kubectl scale deployment mydep --replicas 2
+  181  kubectl get pods
+  182  kubectl get deployments.apps -o wide
+  183  kubectl get pods --show-labels 
+  184  kubectl get rs
+  185  kubectl describe deployments.apps mydep 
+  186  kubectl delete -f deployment.yaml 
+  187  vi svc.yaml 
+  188  vi deployment.yaml 
+  189  kubectl create -f deployment.yaml 
+  190  kubectl get pods
+  191  kubectl get svc
+  192  ls
+  193  ./gitt.sh "deployment"
+  194  kubectl get svc
+  195  kubectl rollout history deployment mydep 
+  196  kubectl annotate deployments.apps mydep kubernetes.io/change-cause="fresh deployment"
+  197  kubectl rollout history deployment mydep 
+  198  kubectl get pods
+  199  kubectl get deployments.apps 
+  200  kubectl set image deployment mydep con1=966145/myserver121:latest
+  201  kubectl get deployments.apps -o wide
+  202  kubectl rollout history deployment mydep 
+  203  kubectl annotate deployments.apps mydep kubernetes.io/change-cause="myapp deployed from 966145"
+  204  kubectl rollout history deployment mydep 
+  205  kubectl get pods
+  206  kubectl get rs
+  207  history 
+  208  history > cmd.txt
