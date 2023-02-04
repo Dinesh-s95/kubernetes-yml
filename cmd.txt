@@ -206,3 +206,77 @@
   206  kubectl get rs
   207  history 
   208  history > cmd.txt
+  209  ./gitt.sh "commands"
+  210  kubectl get rs
+  211  kubectl rollout history deployment mydep 
+  212  kubectl set image deployment mydep con1=httpd:latest
+  213  kubectl rollout history deployment mydep 
+  214  kubectl annotate deployments.apps mydep kubernetes.io/change-cause="httpd deployed"
+  215  kubectl rollout history deployment mydep 
+  216  kubectl get pods
+  217  kubectl delete pod mypod 
+  218  kubectl rollout undo deployment mydep --to-revision 1
+  219  kubectl rollout history deployment mydep 
+  220  kubectl get rs
+  221  kubectl get pod
+  222  kubectl rollout undo deployment mydep --to-revision 2
+  223  kubectl get rs
+  224  kubectl get pods
+  225  kubectl get deployments.apps -o wide
+  226  ls
+  227  kubectl get pods
+  228  kubectl get deployments.apps 
+  229  kubectl autoscale deployment mydep --min 3 --max 10 --cpu-percent 70 --dry-run=client -o yaml
+  230  vi deployment.yaml 
+  231  kubectl autoscale deployment mydep --min 3 --max 10 --cpu-percent 70
+  232  kubectl get hpa
+  233  kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/high-availability-1.21+.yaml
+  234  kubectl delete -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/high-availability-1.21+.yaml
+  235  kubectl get hpa
+  236  kubectl get nodes
+  237  kubectl describe nodes aks-agentpool-36534290-vmss000000
+  238  cp pod.yaml res-pod.yaml
+  239  vi res-pod.yaml 
+  240  kubectl create -f res-pod.yaml 
+  241  kubectl get pods
+  242  kubectl describe pod mypod 
+  243  kubectl get pods
+  244  vi daemon.yaml
+  245  kubectl get pods
+  246  kubectl get nodes
+  247  vi daemon.yaml
+  248  kubectl create -f daemon.yaml 
+  249  kubectl get daemonsets.apps 
+  250  kubectl get pods -o wide
+  251  kubectl get pods 
+  252  kubectl get pods
+  253  kubectl get sc
+  254  vi pvc.yaml
+  255  cp pod.yaml pvc-pod.yaml
+  256  vi pvc-pod.yaml 
+  257  vi pvc.yaml 
+  258  vi pvc-pod.yaml 
+  259  kubectl create -f pvc.yaml 
+  260  kubectl get pvc
+  261  kubectl describe pvc myclaim 
+  262  vi pvc-pod.yaml 
+  263  kubectl create -f pvc-pod.yaml 
+  264  kubectl get pods
+  265  kubectl delete -f mysql.yaml 
+  266  kubectl delete -f pod.yaml 
+  267  kubectl delete -f daemon.yaml -f deployment.yaml 
+  268  kubectl get pods
+  269  kubectl create -f pvc-pod.yaml 
+  270  kubectl get pods
+  271  kubectl describe pod mypod 
+  272  kubectl get pods
+  273  kubectl describe pod mypod 
+  274  kubectl exec -it mypod -- bash
+  275  kubectl delete -f pvc-pod.yaml 
+  276  kubectl get pods
+  277  kubectl create -f pvc-pod.yaml 
+  278  kubectl get pods
+  279  kubectl describe pod mypod 
+  280  kubectl exec -it mypod -- bash
+  281  ./gitt.sh "pvc"
+  282  history > cmd.txt 
